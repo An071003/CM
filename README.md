@@ -26,7 +26,9 @@ Hai notebook dưới đây có một số khác biệt:
 
 **Cải tiến (Public score tăng lên  0.497- 0.498, Private score giữ nguyên 0.407)**
 - Điểm Public tăng nhẹ (0.497–0.498), điểm Private giữ nguyên (0.407).
-- Hướng tiếp cận: Xây dựng mô hình phân loại phụ để dự đoán nhãn 3 nhằm giải quyết vấn đề dữ liệu mất cân bằng. Mô hình này sử dụng phương pháp tổ hợp (VotingClassifier) với ba mô hình cơ sở:
+- Hướng tiếp cận ở notebook này là sẽ xây dựng thêm mô hình phân loại phụ để dự đoán cho nhãn 3 để giải quyết vấn đề imbalanced data do các hàm phân loại có những tính năng giải quyết các tính năng để xử lý trên bộ dữ liệu imbalanced.
+
+Mô hình này sử dụng phương pháp tổ hợp (VotingClassifier) với ba mô hình cơ sở:
   
   **1. XGBoost Classifier:**
      - `random_state=SEED`: Đảm bảo tính tái lập.
