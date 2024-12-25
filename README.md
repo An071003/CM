@@ -28,15 +28,14 @@ Hai notebook dưới đây có một số khác biệt:
 - Điểm Public tăng nhẹ (0.497–0.498), điểm Private giữ nguyên (0.407).
 - Hướng tiếp cận ở notebook này là sẽ xây dựng thêm mô hình phân loại phụ để dự đoán cho nhãn 3 để giải quyết vấn đề imbalanced data do các hàm phân loại có những tính năng giải quyết các tính năng để xử lý trên bộ dữ liệu imbalanced.
 
+Tạo đầu vào của mô hình:  
+  Chuyển các dòng dữ liệu có ‘sii’ = 3 thành 1 và những số còn lại thành 0.  
+
 Mô hình này sử dụng phương pháp tổ hợp (VotingClassifier) với ba mô hình cơ sở:
   **1. XGBoost Classifier:**
-  
      - `random_state=SEED`: Đảm bảo tính tái lập.
-     
      - `use_label_encoder=False`: Tắt bộ mã hóa nhãn do nhãn là các số.
-     
      - `eval_metric='logloss'`: Sử dụng hàm mất mát log loss.
-     
      - `scale_pos_weight=116.33`: Điều chỉnh trọng số cho lớp dương.
 
   **2. CatBoost Classifier:**
