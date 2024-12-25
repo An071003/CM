@@ -24,7 +24,7 @@ Hai notebook dưới đây có một số khác biệt:
 **Notebook 1: CMI| Tuning | [[Ensemble of solutions cd0c0c)]](https://www.kaggle.com/code/hovuan/cmi-tuning-ensemble-of-solutions-cd0c0c)
 \ | Public: 0.498 → Private: 0.407**
 
-#### Các cải tiến đạt được:
+**Cải tiến (Public score tăng lên  0.497- 0.498, Private score giữ nguyên 0.407)**
 - Điểm Public tăng nhẹ (0.497–0.498), điểm Private giữ nguyên (0.407).
 - Hướng tiếp cận: Xây dựng mô hình phân loại phụ để dự đoán nhãn 3 nhằm giải quyết vấn đề dữ liệu mất cân bằng. Mô hình này sử dụng phương pháp tổ hợp (VotingClassifier) với ba mô hình cơ sở:
   
