@@ -55,9 +55,9 @@ Tối ưu hóa ngưỡng dựa trên precision score trên tập validation.
 Kết hợp dự đoán của mô hình hồi quy và mô hình nhãn 3.
 
 **Khó khăn:**
-- Tìm ngưỡng tối ưu cho mô hình nhãn 3.
-- Chỉ dựa vào precision score mà không xem xét accuracy.
-- Overfitting trên tập dữ liệu public.
+-	Khó khăn lớn nhất trong thực nghiệm này là phần chọn ngưỡng phân loại cho mô hình phân loại nhãn 3 là bao nhiêu là phù hợp để mô hình vừa có thể đưa ra được kết quả nhãn 3 và vừa có điểm precision cao mà còn.
+-	Việc chỉ dựa vào thông số precision_score và không kiểm tra tới accuracy_score có thể làm cho việc tìm ngưỡng chưa thật sự tối ưu.
+-	Ngoài ra việc điểm public khá cao nhưng điểm trên private được cao lắm chứng tỏ mô hình đang bị overfitting trên tập public. 
 
 **Notebook 2: [[CMIL_PCIAT-PCIAT)]]([https://www.kaggle.com/code/hovuan/cmi-tuning-ensemble-of-solutions-cd0c0c](https://www.kaggle.com/code/hovuan/cmil-pciat-pciat))
 \| Public: 0.434  → Private: 0.441**
