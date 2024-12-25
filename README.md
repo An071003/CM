@@ -75,20 +75,36 @@ def threshold_Rounder(oof_non_rounded, thresholds):
                                                np.where(oof_non_rounded < thresholds[4], 4, 5)))))
 ```
 - Cập nhật giá trị khởi tạo cho các ngưỡng trong `KappaOptimizer`.
+```python
+KappaOPtimizer = minimize(evaluate_predictions,
+                                  x0=[0.5, 1, 1.5, 1.5, 2.5], args=(y, oof_non_rounded), 
+                                  method='Nelder-Mead')
+```
 - Triển khai hàm `classify_score` để chuyển tổng điểm thành nhãn "sii".
+```python
+def classify_score(score):
+    if 0 <= score <= 30:
+        return 0
+    elif 31 <= score <= 49:
+        return 1
+    elif 50 <= score <= 79:
+        return 2
+    elif 80 <= score <= 100:
+        return 3
+```
+**Khó khăn:**
+-	Việc tiến hành thực nghiệm này gặp khó khăn trong giai đoạn cuộc thi vì kết quả public đã giảm xuống còn 0.434 nên là không biết mô hình có thật sự hoạt động tốt cho cả hai tập dữ liệu hay không.
+-	Việc sử dụng ngưỡng [0.5, 1, 1.5, 1.5, 2.5] thay vì [0.5, 1.5, 2.5, 3.5, 4.5] trong KappaOPtimizer sẽ làm cho điểm ở tập public từ 0.470 xuống còn 0.434 nhưng điểm ở private thì tăng từ 0.436 thành 0.442. Điều này có nghĩa là việc sử dụng ngưỡng trên đã giúp giảm overfitting ở tập public và tăng hiệu quả mô hình ở tập private. 
 
-#### Khó khăn:
-- Điểm Public giảm đáng kể, gây khó khăn trong việc đánh giá hiệu quả mô hình.
-- Thay đổi ngưỡng giúp giảm overfitting trên tập public và cải thiện điểm private.
+**4. Sửa lỗi majority_vote**
 
-## Sửa lỗi majority_vote
+Notebook 1 và 2 sử dụng kết hợp 3 kết quả submission cho 3 trường hợp như sau:
++	sii1 sử dụng Light, XGB_Model, CatBoost_Model, TabNet_Model
++	sii2 sử dụng Light, XGB_Model, CatBoost_Model
++	sii3 sử dụng LGBMRegressor, XGBRegressor, CatBoostRegressor, RandomForestRegressor, GradientBoostingRegressor
+Sau đó sẽ sử dụng lấy kết quả dựa trên mode qua hàm majority_vote.
 
-Cả hai notebook sử dụng kết hợp kết quả từ ba submission:
-- **sii1**: LightGBM, XGBoost, CatBoost, TabNet.
-- **sii2**: LightGBM, XGBoost, CatBoost.
-- **sii3**: LGBMRegressor, XGBRegressor, CatBoostRegressor, RandomForestRegressor, GradientBoostingRegressor.
-
-Hàm majority vote được sửa để chọn giá trị trung vị trong trường hợp tranh chấp.
+Tuy nhiên ở notebook gốc thì hàm majority_vote đang gặp vấn đề khi sử dụng mode là khi cả 3 submission có giá trị khác nhau thì sẽ luôn lấy theo giá trị. Tuy nhiên trong thực tế khi có sự tranh chấp về các giá trị thì ta sẽ thường lấy giá trị ở giữa điều đó làm có hàm majority_vote đang chưa hoạt động đúng.
 
 ```python
 def majority_vote(row):
@@ -98,9 +114,7 @@ def majority_vote(row):
         return row.mode()[0]
 ```
 
-## Kết luận
+**5. Kết luận**
 
-Các điểm quan trọng:
-- Giải quyết dữ liệu mất cân bằng bằng cách tránh sử dụng trực tiếp "sii" cải thiện hiệu suất.
-- Giảm overfitting trên tập public giúp cải thiện sự ổn định trên tập private.
+Việc giải quyết tình trạng imbalance data cho nhãn 3 bằng việc tránh sử dụng trực tiếp sii làm đầu ra dữ liệu và việc giảm overfitting trên tập public là các bước quan trọng nhất trong cuộc thi này.
 
