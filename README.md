@@ -63,9 +63,7 @@ Kết hợp dự đoán của mô hình hồi quy và mô hình nhãn 3.
 \| Public: 0.434  → Private: 0.441**
 
 **Cải tiến (Public score giảm còn 0.434, private tăng lên 0.441):**
-
-- Điểm Public giảm xuống 0.434, điểm Private tăng lên 0.441.
-- Notebook này không sử dụng trực tiếp cột "sii" mà chuyển đổi từ cột "pca_columns."
+- Ở Notebook 2, nhóm chủ yếu không sử dụng cột “sii” có trong tập dữ liệu được cung cấp mà chuyển đổi giá trị từ các cột “pca_columns” sang giá trị cho cột “sii”. Cột “pca_columns” là các cột được tạo thêm nhằm lưu trữ điểm các cột từ “PCIAT-PCIAT_1” đến “PCIAT-PCIAT-20”. Lý do cho hướng đi trên là do dữ liệu chuyển đổi từ các cột điểm PCIAT-PCIAT ít bị mất cân bằng hơn cột “sii” được cung cấp.
 
 #### Phương pháp:
 - Điều chỉnh `threshold_Rounder` thành 6 ngưỡng tương ứng với các nhãn 0-5.
