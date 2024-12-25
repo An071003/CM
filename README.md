@@ -5,6 +5,7 @@
 Vì không có nhiều kinh nghiệm trong lĩnh vực tâm lý, đặc biệt là tâm lý trẻ em, nên việc hiểu và phân tích dữ liệu gặp rất nhiều khó khăn.
 
 **Một số đặc điểm cần lưu ý:**
+
 \_ Dữ liệu được cung cấp rất mất cân bằng và chứa nhiều giá trị bị khuyết.
 
 \_ Dữ liệu test công khai có thể khác với dữ liệu test private, do đó cần đảm bảo mô hình hoạt động ổn định trên cả hai tập dữ liệu.
