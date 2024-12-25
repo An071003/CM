@@ -33,18 +33,18 @@ Tạo đầu vào của mô hình:
 
 Mô hình này sử dụng phương pháp tổ hợp (VotingClassifier) với ba mô hình cơ sở:
 
-  **1. XGBoost Classifier:**
+  1. **XGBoost Classifier:**
      - `random_state=SEED`: Đảm bảo tính tái lập.
      - `use_label_encoder=False`: Tắt bộ mã hóa nhãn do nhãn là các số.
      - `eval_metric='logloss'`: Sử dụng hàm mất mát log loss.
      - `scale_pos_weight=116.33`: Điều chỉnh trọng số cho lớp dương.
 
-  **2. CatBoost Classifier:**
+  2. **CatBoost Classifier:**
      - `random_state=SEED`: Đảm bảo tính tái lập.
      - `verbose=0`: Tắt thông báo trong quá trình huấn luyện.
      - `class_weights={0: 1, 1: 117.33}`: Điều chỉnh trọng số để xử lý mất cân bằng.
 
-  **3. LightGBM Classifier:**
+  3. **LightGBM Classifier:**
      - `random_state=SEED`: Đảm bảo tính tái lập.
      - `is_unbalance=True`: Xử lý mất cân bằng trong quá trình huấn luyện.
 
