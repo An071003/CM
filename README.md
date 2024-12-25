@@ -3,7 +3,17 @@
 **1. Giới thiệu**
 
 Vì không có nhiều kinh nghiệm trong lĩnh vực tâm lý, đặc biệt là tâm lý trẻ em, nên việc hiểu và phân tích dữ liệu gặp rất nhiều khó khăn.
+**1. Giới thiệu**
 
+Vì không có nhiều kinh nghiệm trong lĩnh vực tín dụng nói riêng và tài chính nói chung nên quá trình đọc hiểu dữ liệu và phân tích bài toán gặp khá nhiều khó khăn.
+
+Một số đặc điểm cần được lưu ý trong cuộc thi như:
+
+\_ Dữ liệu được cung cấp có xu hướng rất không đồng nhất, được thu thập qua các khung thời gian khác nhau, cần đảm bảo mô hình hoạt động ổn định theo thời gian.
+
+\_ Có thể có sự chênh lệch giữa tập test được công khai và tập test của ban tổ chức, cần đảm bảo mô hình hoạt động ổn định trên cả hai tập test.
+
+\_ Mô hình sẽ được đánh giá dựa trên metric của ban tổ chức.
 ### Một số đặc điểm cần lưu ý:
 
 \_ Dữ liệu được cung cấp rất mất cân bằng và chứa nhiều giá trị bị khuyết.
