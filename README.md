@@ -63,10 +63,17 @@ Kết hợp dự đoán của mô hình hồi quy và mô hình nhãn 3.
 \| Public: 0.434  → Private: 0.441**
 
 **Cải tiến (Public score giảm còn 0.434, private tăng lên 0.441):**
-- Ở Notebook 2, nhóm chủ yếu không sử dụng cột “sii” có trong tập dữ liệu được cung cấp mà chuyển đổi giá trị từ các cột “pca_columns” sang giá trị cho cột “sii”. Cột “pca_columns” là các cột được tạo thêm nhằm lưu trữ điểm các cột từ “PCIAT-PCIAT_1” đến “PCIAT-PCIAT-20”. Lý do cho hướng đi trên là do dữ liệu chuyển đổi từ các cột điểm PCIAT-PCIAT ít bị mất cân bằng hơn cột “sii” được cung cấp.
+Ở Notebook 2, nhóm chủ yếu không sử dụng cột “sii” có trong tập dữ liệu được cung cấp mà chuyển đổi giá trị từ các cột “PCIAT-PCIAT” sang giá trị cho cột “sii”. Cột “PCIAT-PCIAT” là các cột được tạo thêm nhằm lưu trữ điểm các câu hỏi từ “PCIAT-PCIAT_1” đến “PCIAT-PCIAT-20” sau đó tính tổng lại trong cột “PCIAT-PCIAT-Total” rồi chuyển đổi sang thành cột “sii”. Lý do cho hướng đi trên là do dữ liệu chuyển đổi từ các cột điểm PCIAT-PCIAT ít bị mất cân bằng hơn cột “sii” được cung cấp.
 
-#### Phương pháp:
-- Điều chỉnh `threshold_Rounder` thành 6 ngưỡng tương ứng với các nhãn 0-5.
+- Điều chỉnh `threshold_Rounder` thành 6 ngưỡng tương ứng với các nhãn từ 0-5 trong cột “PCIAT-PCIAT.
+```python
+def threshold_Rounder(oof_non_rounded, thresholds):
+         return np.where(oof_non_rounded < thresholds[0], 0,
+                    np.where(oof_non_rounded < thresholds[1], 1,
+                             np.where(oof_non_rounded < thresholds[2], 2,
+                                      np.where(oof_non_rounded < thresholds[3], 3,
+                                               np.where(oof_non_rounded < thresholds[4], 4, 5)))))
+```
 - Cập nhật giá trị khởi tạo cho các ngưỡng trong `KappaOptimizer`.
 - Triển khai hàm `classify_score` để chuyển tổng điểm thành nhãn "sii".
 
