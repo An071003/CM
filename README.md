@@ -37,7 +37,7 @@ Mô hình này sử dụng phương pháp tổ hợp (VotingClassifier) với ba
      - `random_state=SEED`: Đảm bảo tính tái lập.
      - `use_label_encoder=False`: Tắt bộ mã hóa nhãn do nhãn là các số.
      - `eval_metric='logloss'`: Sử dụng hàm mất mát log loss.
-     - `scale_pos_weight=116.33`: Điều chỉnh trọng số cho lớp dương.
+     - `scale_pos_weight=116.33`: Điều chỉnh trọng số cho lớp dương. Được tính bằng $$/frac{so luong lop lon}/{so luong lop be}$$
 
   2. **CatBoost Classifier:**
      - `random_state=SEED`: Đảm bảo tính tái lập.
