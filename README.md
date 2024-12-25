@@ -21,8 +21,8 @@ Hai notebook dưới đây có một số khác biệt:
 
 **3. Cải tiến các notebook có sẵn**
 
-### Notebook 1: CMI| Tuning | [[Ensemble of solutions cd0c0c)]](https://www.kaggle.com/code/hovuan/cmi-tuning-ensemble-of-solutions-cd0c0c)
-\ | Public: 0.498 → Private: 0.407
+**Notebook 1: CMI| Tuning | [[Ensemble of solutions cd0c0c)]](https://www.kaggle.com/code/hovuan/cmi-tuning-ensemble-of-solutions-cd0c0c)
+\ | Public: 0.498 → Private: 0.407**
 
 #### Các cải tiến đạt được:
 - Điểm Public tăng nhẹ (0.497–0.498), điểm Private giữ nguyên (0.407).
