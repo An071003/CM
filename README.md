@@ -104,7 +104,7 @@ Notebook 1 và 2 sử dụng kết hợp 3 kết quả submission cho 3 trườn
 +	sii3 sử dụng LGBMRegressor, XGBRegressor, CatBoostRegressor, RandomForestRegressor, GradientBoostingRegressor
 Sau đó sẽ sử dụng lấy kết quả dựa trên mode qua hàm majority_vote.
 
-Tuy nhiên ở notebook gốc thì hàm majority_vote đang gặp vấn đề khi sử dụng mode là khi cả 3 submission có giá trị khác nhau thì sẽ luôn lấy theo giá trị. Tuy nhiên trong thực tế khi có sự tranh chấp về các giá trị thì ta sẽ thường lấy giá trị ở giữa điều đó làm có hàm majority_vote đang chưa hoạt động đúng.
+Tuy nhiên ở notebook gốc thì hàm majority_vote đang gặp vấn đề khi sử dụng mode là khi cả 3 submission có giá trị khác nhau thì sẽ luôn lấy theo giá trị đầu. Tuy nhiên trong thực tế khi có sự tranh chấp về các giá trị thì ta sẽ thường lấy giá trị ở giữa điều đó làm có hàm majority_vote đang chưa hoạt động đúng.
 
 ```python
 def majority_vote(row):
