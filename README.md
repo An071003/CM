@@ -1,10 +1,10 @@
-# **Child mind Institute**
+# **Child Mind Institute — Problematic Internet Use**
 
 Tên: Hồ Vũ An.  
 
 Tài khoản kaggle: Ho Vu AN.  
 
-Cuộc thi: [Child mind Institute](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use).  
+Cuộc thi: [Child Mind Institute — Problematic Internet Use](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use).  
 
 Thứ hạng cuộc thi: 🥉 289.  
 
