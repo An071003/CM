@@ -6,9 +6,8 @@ Tài khoản kaggle: Ho Vu AN.
 
 Cuộc thi: [Child mind Institute](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use).  
 
-:third_place_medal:
+Thứ hạng cuộc thi: 🥉 289.  
 
-Thứ hạng cuộc thi:  289.  
 
 **1. Giới thiệu**
 
