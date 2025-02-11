@@ -1,10 +1,10 @@
 **Child mind Institute**
-**
-Tên: Ho Vu An
-Tài khoản kaggle: Ho Vu AN
-Cuộc thi: [Child mind Institute](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use)
-Thứ hạng cuộc thi: :third_place_medal: 289
-**
+Tên: Ho Vu An.  
+Tài khoản kaggle: Ho Vu AN.  
+Cuộc thi: [Child mind Institute](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use).  
+Thứ hạng cuộc thi: :third_place_medal: 289.  
+
+
 **1. Giới thiệu**
 
 Vì không có nhiều kinh nghiệm trong lĩnh vực tâm lý, đặc biệt là tâm lý trẻ em, nên việc hiểu và phân tích dữ liệu gặp rất nhiều khó khăn.
